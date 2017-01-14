@@ -1,0 +1,185 @@
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    color: black;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: white;
+    padding: 10px;
+}
+
+.content-list-btn {
+    margin-bottom: 10px;
+    padding: 0 5px;
+}
+
+#map {
+    height: 100%;
+    width: 100%;
+}
+
+.search {
+    padding-top: 5px;
+    margin: 20px 20px 5px 20px;
+    width: 85%;
+    height: 25px;
+    padding-left: 8px;
+}
+
+.filterlist {
+    color: white;
+    font-size: 1em;
+    font-weight: 600;
+    padding-top: 10px;
+    margin-top: 10px;
+}
+
+#streetview {
+    width: 250px;
+    height: 150px;
+    padding: 0 10px;
+}
+
+.infoWindow_title {
+    color: black;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+.listview {
+    padding-bottom: 10px;
+    cursor: pointer;
+}
+
+.listview:hover {
+    color: grey;
+}
+
+.black{
+    background-color: black;
+}
+
+.content-list-btn span {
+    display: block;
+    width: 19px;
+    height: 3px;
+    margin: 4px 0;
+    background: rgb(0, 0, 0);
+    z-index: 99;
+}
+
+.content-list {
+    display: none;
+}
+
+.expand {
+    display: block !important;
+}
+
+@media only screen and (min-width: 351px) and (max-width: 900px) {
+    #map {
+        height: 100%;
+        position: absolute;
+        width: 98%;
+        padding-top: 5px;
+    }
+
+    #streetview {
+        width: 200px;
+        height: 100px;
+    }
+
+    .search {
+        padding-top: 5px;
+        width: 50%;
+        padding-left: 8px;
+        font-size: 1em;
+    }
+
+    .filterlist {
+        font-size: 1em;
+    }
+
+    h1 {
+        font-size: 1.7em;
+    }
+
+    .infoWindow_title {
+        font-size: 1em;
+    }
+
+    .content-list-btn span {
+        width: 20px;
+        height: 2px;
+    }
+
+    .place-url {
+        font-size: 0.8em;
+    }
+}
+
+@media only screen and (min-width: 901px) {
+    #map {
+        position: absolute;
+        right: 0;
+        width: 75%;
+        height: 100%;
+        float: right;
+        margin-right: 0;
+    }
+
+    .content-list {
+        display: block !important;
+        position: absolute;
+        left: 0;
+        width: 25%;
+        height: 100%;
+        float: left;
+        margin-left: auto;
+        margin-right: auto;
+        overflow: y auto;
+        overflow-y: scroll;
+    }
+
+    .content-list-btn {
+        display: none;
+    }
+}
+
+@media only screen and (max-width: 350px) {
+    .search {
+        padding-top: 5px;
+        width: 80%;
+        height: 25px;
+        padding-left: 8px;
+        font-size: 0.8em;
+    }
+
+    .filterlist {
+        font-size: 0.8em;
+    }
+
+    h1 {
+        font-size: 1.2em;
+    }
+
+    .infoWindow_title {
+        font-size: 1em;
+    }
+
+    .content-list-btn span {
+        width: 15px;
+        height: 2px;
+    }
+
+    .place-url {
+        font-size: 0.8em;
+    }
+}

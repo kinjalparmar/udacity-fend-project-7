@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.min.css" rel="stylesheet">
+    <title>Vadodara</title>
+</head>
+<body>
+    <div class= "container-float">
+        <header class= "black">
+            <h1><strong>Explore Vadodara</strong></h1>
+        </header>
+
+        <div class= "content">
+            <div class= "content-list-btn">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class= "content-list black">
+                <div class= "data-input">
+                    <input type= "text" class= "search" placeholder= "Filter Places" data-bind= "textInput: query">
+                </div>
+                <ul class= "filterlist" data-bind= "foreach: search">
+                    <li class= "listview" data-bind= "text: title, click: $parent.currentMarker"></li>
+                </ul>
+            </div>
+        </div>
+        <div id= "map"></div>
+		<script async src= "js/lib/jquery.min.js "></script>
+        <script async src= "js/lib/knockout-3.2.0.js"></script>
+        <script async src= "js/app.min.js"></script>
+        <script defer src= "https://maps.googleapis.com/maps/api/js?key=AIzaSyDZTYv9L0XN77EMHypW73il2QFIxRD6BS8&libraries=geometry,places&v=3&callback=initMap" onerror="googleError()">
+        </script>
+    </div>
+</body>
+</html>

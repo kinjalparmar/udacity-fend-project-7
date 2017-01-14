@@ -218,7 +218,7 @@ function populateInfoWindow(marker, infowindow) {
         };
 
         // code for wikipedia ajax request.
-        var wikiURL = 'http://en.wikipedia.org/w/api.php?action=opensearch&search=' + marker.title + '&format=json&callback=wikiCallback';
+        var wikiURL = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + marker.title + '&format=json&callback=wikiCallback';
         var wikiTimeoutRequest = setTimeout(function() {
             // Setting the error message if wikipedia resource is not available within time period
             document.getElementById('url-div').innerHTML ="failed to load wikipedia resources";
@@ -258,7 +258,7 @@ function toggleBounce(marker) {
 // Marker function
 function makeMarkerIcon(markerColor) {
     var markerImage = new google.maps.MarkerImage(
-        'http://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
+        'https://chart.googleapis.com/chart?chst=d_map_spin&chld=1.15|0|' + markerColor +
         '|40|_|%E2%80%A2',
         new google.maps.Size(21, 34),
         new google.maps.Point(0, 0),

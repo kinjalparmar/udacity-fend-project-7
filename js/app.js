@@ -70,8 +70,6 @@ var locations = [
         }
     ];
 
-
-
 //Creates a new map
 var map;
 
@@ -118,7 +116,6 @@ var ViewModel = function() {
         });
     });
 
-
     //Initialize the InfoWindow
     var largeInfowindow = new google.maps.InfoWindow();
     // Marker styling
@@ -145,7 +142,7 @@ var ViewModel = function() {
         }
 
     // The following group uses the locations array to create an array of markers on initialize.
-    for (i = 0; i < locations.length; i++) {
+    for (var i = 0; i < locations.length; i++) {
         // Get the position from the locations array.
         var position = locations[i].location;
         var title = locations[i].title;
@@ -213,7 +210,7 @@ function populateInfoWindow(marker, infowindow) {
                 var panorama = new google.maps.StreetViewPanorama(
                     document.getElementById('streetview'), panoramaOptions);
             } else {
-                     document.getElementById('streetview').innerHTML ="No Streetview Found";
+                     alert("No StreetView Found");
             }
         };
 
@@ -221,7 +218,7 @@ function populateInfoWindow(marker, infowindow) {
         var wikiURL = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + marker.title + '&format=json&callback=wikiCallback';
         var wikiTimeoutRequest = setTimeout(function() {
             // Setting the error message if wikipedia resource is not available within time period
-            document.getElementById('url-div').innerHTML ="failed to load wikipedia resources";
+			alert("Failed to load wikipedia resources \n Please try later !!");
         }, 8000);
         $.ajax({
             url: wikiURL,
@@ -240,7 +237,7 @@ function populateInfoWindow(marker, infowindow) {
                 clearTimeout(wikiTimeoutRequest);
                 // Setting the error message if wikipedia resource is not available on selected location
                 if(URL.length === 0){
-                    document.getElementById('url-div').innerHTML ="No wikipedia resources found";
+                    infowindow.setContent('<div class= "infoWindow_title">' + marker.title + '</div><div id= "url-div">No wikipedia resource found</div><div id="streetview"></div>');
                 }
             }
         });
@@ -271,3 +268,5 @@ function makeMarkerIcon(markerColor) {
 var mapError = function() {
     alert('Fail to load google map. Try again later');
 };
+
+
